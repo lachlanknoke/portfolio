@@ -2,28 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <title>Home</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.19/jquery.scrollify.min.js"></script>
 </head>
 <body>
-    <header>
+    <header class="header">
+        <img src="surfblen.jpg" alt="Logo" class="logo">
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Portfolio</a></li>
                 <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
-    <main>
-        <h1>Welcome to My Portfolio</h1>
-        <p>This is the home page.</p>
-    </main>
-    <footer>
-        <p>Copyright &copy; 2023</p>
+
+    <section class="section is--scrolled js--scrollify" data-section-name="first">
+        <div class="section__split section__split--image">
+            <img src="http://lorempixel.com/1280/720/nature" alt="Nature Image" />
+        </div>
+        <div class="section__split section__split--text">
+            <h1 class="section__title">Title of First Section</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+        </div>
+    </section>
+
+    <!-- Repeat the section structure for as many sections as you need -->
+
+    <footer class="footer">
+        <p class="footer__text">Footer Section</p>
+        <p class="footer__copyright">&copy; 2023 Your Name</p>
     </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
