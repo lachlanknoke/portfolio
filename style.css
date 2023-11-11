@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
 
 :root {
-    --main-color: #522470;
-    --secondary-color: #f8c251;
-    --third-color: #ccbbe8;
-    --fourth-color: #876686;
+    --main-color: #522470;      /* Primary color for backgrounds */
+    --secondary-color: #f8c251; /* Secondary color for accents and text */
+    --third-color: #ccbbe8;     /* Tertiary color for alternative elements */
+    --fourth-color: #876686;    /* Quaternary color for footer background */
 }
 
 body {
@@ -12,14 +12,15 @@ body {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    background-color: var(--main-color);
+    color: var(--secondary-color);
 }
 
-/* Header styles */
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: var(--main-color);
+    background: var(--third-color);
     padding: 1rem;
     position: fixed;
     width: 100%;
@@ -28,21 +29,20 @@ body {
 
 .logo-container {
     display: inline-block;
-    background-color: transparent;
-    border-radius: 50%;
-    padding: 10px;
-    overflow: hidden;
+    padding: 5px;
 }
 
 .logo {
     display: block;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
 }
 
-/* Navigation styles */
 nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
     display: flex;
 }
 
@@ -52,32 +52,28 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: var(--secondary-color);
+    font-weight: 400;
 }
 
-/* Footer styles */
-.footer {
-    background-color: var(--fourth-color);
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
+nav ul li a.active, 
+nav ul li a:hover {
+    color: var(--main-color);
+    background-color: var(--secondary-color);
 }
 
-/* Two-sided section styles */
 .section {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    padding: 50px;
+    padding: 2rem;
 }
 
 .section__split {
-    flex: 1;
-    padding: 20px;
+    flex-basis: 100%;
+    margin: 1rem;
 }
 
 .section__split--image img {
@@ -86,53 +82,21 @@ nav ul li a {
 }
 
 .section__split--text {
-    max-width: 600px;
+    text-align: center;
 }
 
-/* Animations and hover effects */
-h1 {
-    position: relative;
-    font-size: 2.5rem;
+.footer {
+    background-color: var(--fourth-color);
     color: var(--secondary-color);
-}
-
-h1::before {
-    content: '';
-    position: absolute;
+    text-align: center;
+    padding: 10px 0;
+    position: relative; /* changed from fixed to relative */
     width: 100%;
-    height: 5px;
-    bottom: 0;
-    left: 0;
-    background-color: var(--main-color);
-    visibility: hidden;
-    transform: scaleX(0);
-    transition: all 0.3s ease-in-out 0s;
 }
 
-h1:hover::before {
-    visibility: visible;
-    transform: scaleX(1);
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .header, .footer {
-        position: relative;
-    }
-
-    .section {
-        flex-direction: column;
-    }
-
-    .section__split {
-        width: 100%;
-    }
-}
-
-/* SVG shape divider */
-.custom-shape-divider-top {
+.custom-shape-divider-bottom-1699715057 {
     position: absolute;
-    top: 0;
+    bottom: 0;
     left: 0;
     width: 100%;
     overflow: hidden;
@@ -140,13 +104,32 @@ h1:hover::before {
     transform: rotate(180deg);
 }
 
-.custom-shape-divider-top svg {
+.custom-shape-divider-bottom-1699715057 svg {
     position: relative;
     display: block;
-    width: calc(156% + 1.3px);
+    width: calc(100% + 1.3px);
     height: 150px;
 }
 
-.custom-shape-divider-top .shape-fill {
-    fill: var(--main-color);
+.custom-shape-divider-bottom-1699715057 .shape-fill {
+    fill: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .header, .footer {
+        position: relative;
+    }
+
+    .section {
+        padding: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
 }
