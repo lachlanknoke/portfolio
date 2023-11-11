@@ -29,6 +29,20 @@ body {
 .header img.logo {
     height: 50px; /* Adjust as needed */
 }
+.logo-container {
+    display: inline-block;
+    background-color: #522470; /* Replace with your desired color */
+    border-radius: 50%;
+    padding: 10px; /* Adjust the padding to increase/decrease the background area */
+}
+
+.logo {
+    display: block;
+    border-radius: 50%;
+    width: 100px; /* Adjust as needed */
+    height: 100px; /* Adjust as needed */
+}
+
 
 /* Navigation styles */
 nav ul {
