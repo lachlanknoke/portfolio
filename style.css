@@ -1,35 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
+
+:root {
+    --main-color: #522470;
+    --secondary-color: #f8c251;
+    --third-color: #ccbbe8;
+    --fourth-color: #876686;
+}
+
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Lato', sans-serif;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1em 0;
+
+img {
+    width: 100%;
+    height: auto;
 }
-nav ul {
+
+ul {
     list-style-type: none;
     padding: 0;
 }
+
+/* Header styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--main-color);
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header img.logo {
+    height: 50px; /* Adjust as needed */
+}
+
+/* Navigation styles */
+nav ul {
+    display: flex;
+}
+
 nav ul li {
-    display: inline;
     margin-right: 20px;
 }
+
 nav ul li a {
-    color: white;
     text-decoration: none;
+    color: white;
 }
-main {
-    padding: 20px;
-}
-footer {
-    background-color: #333;
+
+/* Footer styles */
+.footer {
+    background-color: var(--fourth-color);
     color: white;
     text-align: center;
-    padding: 1em 0;
+    padding: 10px 0;
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Section styles */
+.section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 100px;
+}
+
+.section__first {
+    background-color: var(--third-color);
+}
+
+/* ...additional section styles... */
+
+/* Animations and Effects */
+h1 {
+    position: relative;
+    font-size: 5rem;
+    color: var(--secondary-color);
+}
+
+h1::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--main-color);
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: all 0.3s ease-in-out 0s;
+}
+
+h1:hover::before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .section {
+        flex-direction: column;
+    }
+
+    /* ...additional responsive styles... */
 }
